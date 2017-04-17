@@ -17,13 +17,25 @@ body {
     -o-background-size: cover;
 }
 
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+    width: 100%;
+    height: auto;
+}
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
 .image-bg-fluid-height {
-	background: url('http://lorempixel.com/g/1920/500/') no-repeat center center scroll;
+	background: url("file://Documents\GitHub\TEST\imgage\IMG_4157.jpg") no-repeat center center scroll;
     padding: 100px 0;
 }
 
 .image-bg-fixed-height {
-	background: url('http://lorempixel.com/g/1920/500/') no-repeat center center scroll;
+	background: url('') no-repeat center center scroll;
     height: 450px;
 }
 

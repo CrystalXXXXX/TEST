@@ -6754,4 +6754,50 @@ button.close {
     display: none !important;
   }
 }
+
+	
+The short answer is yes.
+
+There are many ways of handling this. With HTML/CSS you can throw elements on top of each other easily.
+
+HTML:
+
+<img id="imga" src="img1.png"/>
+<img id="imgb" src="img2.png"/>
+<img id="imgc" src="img3.png"/>
+CSS:
+
+img
+{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+}
+So let's take a look at what's important here. You have 3 images in your HTML document (imga, imgb, and imgc). In order to overlay these, you have to first set their position to absolute so that the images will ignore any default layout behaviors. Then, you can use the left and top property to define the x,y coordinates of the img elements, respectively. In the example above, all of the elements are overlayed in the top-left corner of the page. In order control which image ends up on top, you can use the z-index property like so:
+
+#imga
+{
+z-index: 10;
+}
+
+#imgb
+{
+z-index: 20;
+}
+
+#imgc
+{
+z-index: 30;
+}
+This will make imgc appear in front, imgb appear behind imgc, and imga behind everything else. The z-index property assigns which element goes in front of another. The element with the greatest z-index goes on top, followed by the second greatest and so on.
+
+For your project, we can slightly tweak the code above:
+
+HTML
+
+<img id="layer1" src="img1.png"/>
+<img id="layer2" src="img2.png"/>
+<img id="layer3" src="img3.png"/>
+CSS
+
 /*# sourceMappingURL=bootstrap.css.map */
